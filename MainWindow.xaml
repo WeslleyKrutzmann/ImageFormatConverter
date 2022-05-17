@@ -1,0 +1,80 @@
+﻿<Window x:Class="ImageFormatConverter.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Image format converter" 
+        Height="285" 
+        Width="350"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
+    <Grid>
+
+        <StackPanel Orientation="Vertical"
+                    Margin="10">
+
+            <Button Content="Selecionar arquivos"
+                    Height="30"
+                    Click="BtnSelectFiles_Click"/>
+
+            <StackPanel Orientation="Horizontal"
+                        HorizontalAlignment="Center"
+                        Margin="0,10,0,0">
+
+                <TextBlock Text="Arquivos selecionados:"
+                           Margin="0,0,10,0"
+                           FontSize="12"/>
+
+                <TextBlock Name="txtTotalFilesCount"
+                           FontSize="12"
+                           Text="0"/>
+
+            </StackPanel>
+
+            <TextBlock Text="Formato de destino"
+                       Margin="0,20,0,0"
+                       FontSize="12"/>
+            
+            <ComboBox Name="cmbFormats"
+                      Height="30"
+                      Margin="0,5,0,0"
+                      VerticalContentAlignment="Center">
+
+                <ComboBoxItem Content=".jpeg"
+                              Tag="0"
+                              IsSelected="True"/>
+
+                <ComboBoxItem Content=".png"
+                              Tag="1"/>
+
+                <ComboBoxItem Content=".tiff"
+                              Tag="2"/>
+
+            </ComboBox>
+            
+            <Button Content="Processar arquivos"
+                    Height="30"
+                    Margin="0,20,0,0"
+                    Click="BtnProcessFiles_Click"/>
+
+            <TextBlock Text="Aguardando..."
+                       Margin="0,10,0,0"
+                       FontSize="12"
+                       HorizontalAlignment="Center"
+                       Name="txtStatus"/>
+
+            <ProgressBar Name="pgProgress"
+                         Minimum="0"
+                         Maximum="100"
+                         Value="0"
+                         Margin="0,5,0,0"
+                         Height="10"
+                         Foreground="DodgerBlue"/>
+
+        </StackPanel>
+
+    </Grid>
+
+</Window>
