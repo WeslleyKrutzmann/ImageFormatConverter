@@ -99,11 +99,11 @@ namespace ImageFormatConverter
             {
                 this.Dispatcher.Invoke(() =>
                 {
-                    MessageBox.Show("Arquios processados com sucesso!");
+                    MessageBox.Show("Arquivos processados com sucesso!");
                     
                     this.txtTotalFilesCount.Text = "0";
                     this.pgProgress.Value = 0;
-                    this.txtStatus.Text = "Aguardando...";
+                    this.txtStatus.Text = "Aguardando... Clique em Processar Arquivos";
                 });
             }
         }
